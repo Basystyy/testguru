@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tests:
+  - list of questions;
+  - answer options.
 
-Things you may want to cover:
+Users:
+  -students:
+    -profile;
+    -access rights to the list of tests;
+    -interface for filling out the test;
+    -interface for publishing the test on social networks;
+    -interface for communication with administrators.
 
-* Ruby version: ruby 3.1.2p20 (2022-04-12 revision 4491bb740a)
+  -administrators:
+    -profile;
+    -access rights for:
+    -creating tests;
+    -editing tests;
+    -checking the tests completed by students;
+    -publication of test results;
+    -changes in access rights for students and/or administrators.
 
-* System dependencies: standart Rails and i18n
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    -administrator interfaces for:
+      -creating tests;
+      -editing tests;
+      -checking the tests completed by students;
+      -publication of test results;
+      -interface for communication with students;
+      -changes in access rights for students and/or administrators.
