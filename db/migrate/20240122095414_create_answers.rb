@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration[6.1]
     create_table :answers do |t|
       t.string :body
       t.boolean :correct
-      t.integer :questions_id
+      t.belongs_to :question, index: true
 
       t.timestamps
     end
