@@ -2,7 +2,8 @@ class Test < ApplicationRecord
 
   belongs_to :category
   has_many :questions
-  has_and_belongs_to_many :users
+  has_many :tests-users
+  has_many :users, through: :tests-users
 
   def self.name_list(name)
     list_cat = Category.where(title: name).pluck(:id)
