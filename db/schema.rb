@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_31_123744) do
+ActiveRecord::Schema.define(version: 2024_01_31_152236) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -56,9 +56,7 @@ ActiveRecord::Schema.define(version: 2024_01_31_123744) do
     t.string "gender", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "test_id"
-    t.index ["test_id"], name: "index_users_on_test_id"
+    t.boolean "admin", default: false
   end
 
-  add_foreign_key "users", "tests"
 end
