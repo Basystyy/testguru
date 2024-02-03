@@ -9,7 +9,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :category_titles, -> (name) { where(category_id: Category.find_by_name(name)).order(title: :desc).pluck(:title) }
+  scope :category_titles, -> (name) { where(category_id: Category.my_id(name)).order(title: :desc).pluck(:title) }
 
   def self.name_list(name)
     list_cat = Category.where(title: name).pluck(:id)
