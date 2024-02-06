@@ -6,10 +6,12 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
+  default_scope { order(title: :desc) }
+  
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :category_titles, -> (name) { where(category_id: Category.my_id(name)).order(title: :desc).pluck(:title) }
+  scope :category_titles, -> (name) { where(category_id: Category.id_from_category(name)).pluck(:title) }
 
   validates :title, presence: true,
                     uniqueness: { scope: :level }
