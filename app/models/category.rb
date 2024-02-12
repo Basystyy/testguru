@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
 
-  scope :names, -> { order(title: :asc) }
-  scope :id_from_category, -> (category_title) { where(title: category_title).select(:id) }
+  default_scope { order(title: :asc) }
 
   has_many :tests
 

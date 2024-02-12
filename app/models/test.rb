@@ -5,28 +5,14 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :tests_users
   has_many :users, through: :tests_users
-
-  default_scope { order(title: :desc) }
   
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :category_titles, -> (name) { where(category_id: Category.id_from_category(name)).pluck(:title) }
+  scope :titles_by_category_title, -> (title) { where(category_id: Category.find_by(title: title).id).order(title: :desc).pluck(:title) }
 
   validates :title, presence: true,
                     uniqueness: { scope: :level }
-  validates :level, numericality: { only_integer: true }
-  validate :validate_level
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
-  def self.name_list(name)
-    list_cat = Category.where(title: name).pluck(:id)
-    list_test = Test.select(:title).where(category_id: list_cat)
-    list_test.order(title: :desc)
-  end
-
-  private
-
-  def validate_level
-    errors.add(:level) if level.to_i <= 0
-  end
 end

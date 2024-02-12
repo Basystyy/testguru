@@ -2,7 +2,7 @@ class Answer < ApplicationRecord
 
   belongs_to :question
 
-  scope :answer_true, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   validates :body, presence: true
   validate :answers_qty
