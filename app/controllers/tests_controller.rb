@@ -3,7 +3,7 @@ class TestsController < ApplicationController
     result = Test.pluck(:title, :level).map do |list|
       list.join(' > ')
     end.join("\n")
-    render plain: list
+    render plain: result
   end
 
   def show
