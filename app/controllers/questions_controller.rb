@@ -9,4 +9,12 @@ class QuestionsController < ApplicationController
   def show
     render plain: Question.find(params[:id]).body
   end
+
+  def new
+    
+  end
+
+  def create
+
+  end
 end
