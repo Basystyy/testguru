@@ -1,16 +1,16 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test
+  before_action :find_test, only: %i[create]
 
   def index
-    result = Question.where(test_id: params[:test_id]).pluck(:test_id, :body).map do |list|
+    result = Question.where(test_id: params[:test_id]).pluck(:id, :body, :test_id).map do |list|
       list.join(' > ')
     end.join("\n")
     render plain: result
   end
 
   def show
-    render plain: Question.find(params[:id]).body
+    @question = Question.find(params[:id])
   end
 
   def new
@@ -18,11 +18,20 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # byebug
     quest = Question.new(quest_params)
     quest.test = @test
     quest.save
     render plain: quest.inspect
+  end
+
+  def destroy
+    question = Question.find(params[:id])
+    question.destroy
+  end
+
+  def delete
+    question = Question.find(params[:id])
+    question.destroy
   end
 
   private

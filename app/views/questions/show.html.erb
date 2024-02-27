@@ -1,0 +1,10 @@
+<h1>Delete Question</h1>
+<% @question.answers.pluck(:body).each do |answer| %>
+  <p> <%= answer %> </p>
+<% end %>
+
+<form action="/questions/<%= params[:id] %>/delete" method="post">
+  <input name="authenticity_token" value"<%= form_authenticity_token %>" type="hidden">
+
+  <input type="submit" value="Destroy">
+</form>
