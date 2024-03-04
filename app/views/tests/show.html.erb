@@ -1,0 +1,27 @@
+<h1>Test <%= params[:id] %> </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+<p/>
+
+<p>
+  <strong>Level:</strong>
+  <%= @test.level %>
+<p/>
+
+<h2>Questions from this test:</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Body</th>
+  </tr>
+
+  <% @test.questions.each do | question | %>
+    <tr>
+      <td><%= question.id %></td>
+      <td><%= question.body %></td>
+    </tr>
+    <%end%>
+</table>

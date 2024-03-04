@@ -1,13 +1,9 @@
 class TestsController < ApplicationController
   def index
-    result = Test.pluck(:title, :level).map do |list|
-      list.join(' > ')
-    end.join("\n")
-    render plain: result
+    @tests = Test.all
   end
 
   def show
-    test = Test.find(params[:id])
-    render plain: Question.where(test: test).pluck(:body).join("\n")
+    @test = Test.find(params[:id])
   end
 end

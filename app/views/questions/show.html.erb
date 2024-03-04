@@ -1,10 +1,27 @@
-<h1>Delete Question</h1>
-<% @question.answers.pluck(:body).each do |answer| %>
-  <p> <%= answer %> </p>
-<% end %>
+<h1>Question <%= params[:id] %></h1>
 
-<form action="/questions/<%= params[:id] %>/delete" method="post">
-  <input name="authenticity_token" value"<%= form_authenticity_token %>" type="hidden">
+<p>
+<strong>Id:</strong>
+<%= @question.id %>
+<p/>
 
-  <input type="submit" value="Destroy">
-</form>
+<p>
+<strong>Body:</strong>
+<%= @question.body %>
+<p/>
+
+<h2>Answers for this question:</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Body</th>
+  </tr>
+
+  <% @question.answers.each do | answer | %>
+    <tr>
+      <td><%= answer.id %></td>
+      <td><%= answer.body %></td>
+    </tr>
+    <%end%>
+</table>

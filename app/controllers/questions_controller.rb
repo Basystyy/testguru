@@ -5,10 +5,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    result = Question.where(test_id: params[:test_id]).pluck(:id, :body, :test_id).map do |list|
-      list.join(' > ')
-    end.join("\n")
-    render plain: result
+    @questions = Question.where(test_id: params[:test_id])
   end
 
   def show
