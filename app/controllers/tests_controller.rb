@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   
-  before_action :test_find, only: %i[show edit update delete]
+  before_action :test_find, only: %i[show edit update destroy]
   
   def index
     @tests = Test.all
@@ -36,17 +36,11 @@ class TestsController < ApplicationController
     end
   end
 
-  # def delete
+  def destroy
+    @test.destroy
+    redirect_to tests_path
+  end
 
-  # end
-
-  # def destroy
-  #   if @test.destroy
-  #     index
-  #   else
-  #     render :delete
-  #   end
-  # end
 private
 
   def test_params

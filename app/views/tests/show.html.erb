@@ -18,5 +18,13 @@
     <th>Body</th>
   </tr>
 
-  <% render @tests %>
-</table>
+  <% @test.questions.each do |question| %>
+    <tr>
+      <td><%= question.id %></td>
+      <td><%= question.body %></td>
+    </tr>
+  <% end %>
+</table><br>
+
+<%= link_to 'Edit', edit_test_path(@test) %> | 
+<%= link_to 'Back', tests_path %>
