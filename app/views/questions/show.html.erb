@@ -1,13 +1,13 @@
-<h1>Question <%= params[:id] %></h1>
+<h1>Question <%= params[:id] %> from test <%= @question.test.title %>, level <%= @question.test.level %></h1>
 
 <p>
-<strong>Id:</strong>
-<%= @question.id %>
+  <strong>Id:</strong>
+  <%= @question.id %>
 <p/>
 
 <p>
-<strong>Body:</strong>
-<%= @question.body %>
+  <strong>Body:</strong>
+  <%= @question.body %>
 <p/>
 
 <h2>Answers for this question:</h2>
@@ -23,5 +23,5 @@
       <td><%= answer.id %></td>
       <td><%= answer.body %></td>
     </tr>
-    <%end%>
+  <% end %>
 </table>
