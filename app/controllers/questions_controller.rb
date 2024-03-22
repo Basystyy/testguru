@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-
+    set_test
   end
 
   def update
