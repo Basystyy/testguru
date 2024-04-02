@@ -12,13 +12,6 @@
 
   <body>
     <%= yield %>
-    <footer>
-      <br>
-      <p>
-      <%= current_year %>, Basystyy Andrew, the illusion of becoming a programmer)))<br>
-      <%= link_to 'TestGuru project', git_repo %><br>
-      <%= link_to 'project in an online school Thinknetica', 'http://thinknetica.com' %> <br>
-      </p>
-    </footer>
+    <%= render 'shared/footer' %>
   </body>
 </html>

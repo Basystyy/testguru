@@ -4,8 +4,8 @@ module ApplicationHelper
     Time.current.year
   end
 
-  def git_repo
-    'https://github.com/Basystyy/testguru.git'
+  def github_url(author, repo)
+    "GitHub: #{link_to author, repo}".html_safe
   end
 
 end
