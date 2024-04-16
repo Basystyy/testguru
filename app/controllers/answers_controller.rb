@@ -1,8 +1,8 @@
 class AnswersController < ApplicationController
 
-  before_action :set_answer, only: %i[ show edit update destroy ]
-  before_action :question_find, only: %i[ create new ]
-  before_action :set_question, only: %i[edit destroy]
+  before_action :set_answer, only: %i[show edit update destroy]
+  before_action :question_find, only: %i[create new]
+  before_action :set_question, only: %i[destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
 
@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @answer = Answer.new
+    @answer = @question.answers.new
   end
 
   def edit
@@ -31,7 +31,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer
+      redirect_to @answer.question
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-      params.require(:answer).permit(:body)
+      params.require(:answer).permit(:body, :correct)
     end
 
     def question_find
