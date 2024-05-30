@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2024_04_09_103240) do
   create_table "test_passages", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.integer "current_question_id", null: false
-    t.integer "correct_question", default: 0
+    t.integer "current_question_id"
+    t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2024_04_09_103240) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "test_passages", "current_questions"
+  add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "users", column: "author_id"
