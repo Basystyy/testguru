@@ -12,4 +12,12 @@ module TestPassagesHelper
     "Your result: #{@test_passage.correct_questions} from #{@test_passage.test.questions.count}"
   end
 
+  def current_number
+    @test_passage.test.questions.index(@test_passage.current_question) + 1
+  end
+
+  def questions_coumt
+    @test_passage.test.questions.count
+  end
+
 end
