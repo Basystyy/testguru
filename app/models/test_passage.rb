@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  before_save :next_question
+  before_update :next_question
 
   def completed?
     current_question.nil?
@@ -17,6 +17,10 @@ class TestPassage < ApplicationRecord
     end
 
     save!
+  end
+
+  def test_completed?
+    correct_questions >= (test.questions.count * 85 / 100)
   end
 
   private
