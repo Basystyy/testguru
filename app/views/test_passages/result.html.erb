@@ -1,2 +1,6 @@
-<h1><%= @test_passage.test.title %></h1>
-<h1><%= test_passage_header(@test_passage) %></h1>
+<h1> Result for test: <%= @test_passage.test.title %></h1>
+<h1><%= test_passage_header %></h1>
+
+<p>
+  <%= link_to 'Back to list of tests', tests_path %>
+</p>
