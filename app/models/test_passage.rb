@@ -19,8 +19,8 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def test_completed?
-    correct_questions >= (test.questions.count.to_f * 85 / 100)
+  def test_successfully?
+    (correct_questions.to_f * 100).floor.to_i >= (test.questions.count.to_f * 85).floor.to_i
   end
 
   private
@@ -30,10 +30,8 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+    return false if answer_ids.nil?
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort || answer_ids != nil
   end
 
   def correct_answers
