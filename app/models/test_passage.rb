@@ -20,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_successfully?
-    (correct_questions.to_f * 100).floor.to_i >= (test.questions.count.to_f * 85).floor.to_i
+    correct_questions * 100 >= test.questions.count.to_f * 85
   end
 
   private
