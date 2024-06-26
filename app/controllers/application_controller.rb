@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       redirect_to login_path, alert: :alert_message
     end
 
-    session[:email] == current_user&.email
+    session[:id] == current_user&.id
   end
 
   def current_user
@@ -20,5 +20,4 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.present?
   end
-
 end

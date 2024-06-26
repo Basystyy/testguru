@@ -4,6 +4,11 @@ class SessionsController < ApplicationController
 
   end
 
+  def destroy
+    reset_session
+    redirect_to login_path, notice: 'You have been logged out.'
+  end
+
   def create
     user = User.find_by(email: params[:email])
 
@@ -11,7 +16,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
+      flash.now[:alert_message]
       render :new
     end
   end
