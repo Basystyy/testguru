@@ -2,7 +2,7 @@
   <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= link_to 'Show', test_path(test)%></td>
-  <td><%= link_to 'Edit', edit_test_path(test)  if logged_in?%></td>
+  <td><%= link_to 'Edit', edit_test_path(test)  %></td>
   <td>
     <%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %>
   </td>
