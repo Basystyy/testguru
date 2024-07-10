@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user.name = @user.email unless @user.name.present?
 
     if @user.save
-      redirect_to tests_path
+      redirect_to tests_path, notice: 'New User saved'
     else
-      render :new
+      render :new, alert: 'User do not saved'
     end
   end
 
