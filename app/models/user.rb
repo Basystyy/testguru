@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL }, uniqueness: { case_sensitive: false }
-  before_save { self.email = email.downcase }
+  before_save :email_normalize
 
   has_secure_password
 
@@ -16,6 +16,12 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  private
+
+  def email_normalize
+    self.email = email.strip.downcase
   end
 
 end
