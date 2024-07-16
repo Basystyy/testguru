@@ -1,12 +1,11 @@
 module ApplicationHelper
 
   def flash_message
-    messages = flash.each_with_object([]) do | (key, value), array |
+    flash.filter_map do |key, value|
       if value
-        array << content_tag(:p, value, class: "flash #{key}")
+        content_tag(:p, value, class: "flash #{key}")
       end
-    end
-    messages.join.html_safe
+    end.join.html_safe
   end
   
   # def alert_message
