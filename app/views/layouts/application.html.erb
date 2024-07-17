@@ -14,13 +14,13 @@
     <%= render 'shared/header' %>
 
     <h2>
-      <%= flash_message %>
+      <%= render 'shared/flash' %>
     </h2>
 
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <p class="nav user">
-        Welcome, <b><%= current_user.email %></b> Guru<br>
-        <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
       </p>
     <% end %>
 
