@@ -4,7 +4,9 @@ class User < ApplicationRecord
         :registerable,
         :recoverable,
         :rememberable,
-        :validatable
+        :trackable,
+        :validatable,
+        :confirmable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
