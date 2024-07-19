@@ -17,6 +17,8 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
+  <% author_id = current_user.id %>
+
   <p>
     <%= form.submit %>
   </p>
