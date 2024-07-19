@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2024_07_17_090001) do
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
+    t.string "type", default: "User", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -79,9 +79,12 @@ ActiveRecord::Schema.define(version: 2024_07_17_090001) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["type"], name: "index_users_on_type"
   end
 
   add_foreign_key "test_passages", "questions", column: "current_question_id"
