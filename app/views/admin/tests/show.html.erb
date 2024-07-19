@@ -13,7 +13,7 @@
 <h2>Questions from this test:</h2>
 
 <p>
-  <%= link_to 'New question for this test', new_test_question_path(@test) %>
+  <%= link_to 'New question for this test', new_admin_question_path(@test) %>
 </p>
 
 <table>
@@ -24,7 +24,7 @@
   </tr>
 
   <% @test.questions.each do |question| %>
-    <%= render partial: 'shared/actions', locals: {question: question, test: @test} %>
+    <%= render partial: 'admin/shared/actions', locals: {question: question, test: @test} %>
   <% end %>
 </table><br>
 

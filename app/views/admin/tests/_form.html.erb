@@ -18,11 +18,6 @@
   </p>
 
   <p>
-    <%= form.label :author_id %>:
-    <%= form.collection_select :author_id, User.where(admin: true), :id, :name, prompt: true %>
-  </p>
-  
-  <p>
     <%= form.submit %>
   </p>
 <% end %>

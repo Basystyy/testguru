@@ -1,4 +1,4 @@
-class QuestionsController < AuthenticatedController
+class Admin::QuestionsController < AuthenticatedController
   
   before_action :question_find, only: %i[edit update destroy show]
   before_action :test_find, only: %i[index create new]
@@ -44,7 +44,7 @@ class QuestionsController < AuthenticatedController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@test)
+    redirect_to admin_test_path(@test)
   end
 
   private

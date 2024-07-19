@@ -4,6 +4,8 @@
 
 <%= link_to 'Login existing user', new_user_session_path %><br>
 
+<%= link_to 'Go to admin resources', admin_tests_path if current_user.is_a?(Admin) %>
+
 <table>
   <tr>
     <th>Title</th>

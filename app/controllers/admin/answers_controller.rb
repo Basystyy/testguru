@@ -1,4 +1,4 @@
-class AnswersController < AuthenticatedController
+class Admin::AnswersController < AuthenticatedController
 
   before_action :set_answer, only: %i[show edit update destroy]
   before_action :question_find, only: %i[create new]
@@ -39,7 +39,7 @@ class AnswersController < AuthenticatedController
 
   def destroy
     @answer.destroy
-    redirect_to question_path(@question)
+    redirect_to admin_question_path(@question)
   end
 
   private
