@@ -1,33 +1,105 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+
+  variables:
+    title: &title
+      title: "Title:"
+    
+    level: &level
+      level: "Level:"
+
+    actions: &actions
+      actions: "Actions"
+
+    show: &show
+      show: "Show"
+
+    edit: &edit
+      edit: "Edit"
+
+    destroy: &destroy
+      destroy: "Destroy"
+
+    id: &id
+      id: "Id"
+
+    body: &body
+      body: "Body"
+
+    back: &back
+      back: "Назад"  
+
+  helpers:
+    submit:
+      test:
+        create: "Create test."
+        update: "Update test."
+    label:
+      test:
+        category_id: "Category"
+        <<: *title
+        <<: *level
+
+  header:
+    project: "Project TestGuru, Rails skills training"
+    logout: "Logout"
+    welcome: "Welcome, %{email}"
+
+  form:
+    next: "Next"
+    start: "Start test"
+    you_sure: "Are you sure?"
+    test_list: "Back to list of tests"
+    <<: *show
+    <<: *edit
+    <<: *destroy
+    <<: *back
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index: &index
+      header: "Tricky tests."
+      new: "Register a new user"
+      login: "Login existing user"
+      admin: "Admin resources"
+      question: "Qnt questions"
+      <<: *actions
+      <<: *title
+      <<: *level
+  
+  admin:
+    tests:
+      show:
+        test: "Test"
+        test_questions: "Questions from this test:"
+        new_question: "New question for this test"
+        <<: *actions
+        <<: *id
+        <<: *body        
+        <<: *title
+        <<: *level
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky tests."
+        new_test: "New test"
+        <<: *index
+
+  test_passages:
+    show:
+      pass: "Pass the %{test} test"
+      number: "Question number %{number} from %{count}"  
+    result: &result
+      header: "Result of test %{title}:"
+      message: "Your result: %{your_result} from %{max_result}."
+      right_result: "Congratulation, test was comleted!"
+      wrong_result: "Test failed. Try again."
+
+  tests_mailer:
+    completed_test:
+      subject: "TestGuru test result."
+      <<: *result
