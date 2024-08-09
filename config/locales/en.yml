@@ -48,7 +48,7 @@ en:
     next: "Next"
     start: "Start test"
     you_sure: "Are you sure?"
-    test_list: "Back to list of tests    
+    test_list: "Back to list of tests"
     <<: *show
     <<: *edit
     <<: *destroy
