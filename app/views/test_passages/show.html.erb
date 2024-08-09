@@ -1,7 +1,7 @@
-<h1>Pass the <%= @test_passage.test.title %> Test</h1>
+<h1><%= t('.pass', test: @test_passage.test.title) %></h1>
 
 <b>
-  <p>Question number <%= current_number %> from <%= questions_count %></p>
+  <p><%= t('.number', number: current_number, count: questions_count) %></p>
   <p><%= @test_passage.current_question.body %></p>
 </b>
 
@@ -13,9 +13,9 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit t('form.next') %></p>
 <% end %>
 
 <p>
-  <%= link_to 'Back to list of tests', tests_path %>
+  <%= link_to t('.test_list'), tests_path %>
 </p>

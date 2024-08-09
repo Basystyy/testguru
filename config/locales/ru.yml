@@ -45,8 +45,10 @@ ru:
     welcome: "Приветствуем, %{email}"
 
   form:
+    next: "Следующий"
     start: "Старт теста"
     you_sure: "Вы уверены?"
+    test_list: "Назад к списку тестов"
     <<: *show
     <<: *edit
     <<: *destroy
@@ -90,6 +92,9 @@ ru:
         <<: *index
 
   test_passages:
+    show:
+      pass: "Прохождение теста %{test}"
+      number: "Вопрос %{number} из %{count}"
     result: &result
       header: "Результат прохождения теста %{title}:"
       message: "Ваш результат: %{your_result} из %{max_result}."

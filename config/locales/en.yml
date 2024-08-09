@@ -45,8 +45,10 @@ en:
     welcome: "Welcome, %{email}"
 
   form:
+    next: "Next"
     start: "Start test"
     you_sure: "Are you sure?"
+    test_list: "Back to list of tests    
     <<: *show
     <<: *edit
     <<: *destroy
@@ -88,6 +90,9 @@ en:
         <<: *index
 
   test_passages:
+    show:
+      pass: "Pass the %{test} test"
+      number: "Question number %{number} from %{count}"  
     result: &result
       header: "Result of test %{title}:"
       message: "Your result: %{your_result} from %{max_result}."
