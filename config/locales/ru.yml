@@ -1,5 +1,32 @@
 ru:
-  hello: "Привет мир"
+
+  variables:
+    title: &title
+      title: "Название:"
+    
+    level: &level
+      level: "Уровень:"
+
+    actions: &actions
+      actions: "Действия"
+
+    show: &show
+      show: "Показать"
+
+    edit: &edit
+      edit: "Редакт."
+
+    destroy: &destroy
+      destroy: "Удалить"
+
+    id: &id
+      id: "№"
+
+    body: &body
+      body: "Содержание"
+
+    back: &back
+      back: "Назад"
 
   helpers:
     submit:
@@ -8,9 +35,22 @@ ru:
         update: "Обновить тест."
     label:
       test:
-        title: "Название"
-        level: "Уровень"
         category_id: "Категория"
+        <<: *title
+        <<: *level
+
+  header:
+    project: "Проект TestGuru, освоение Rails"
+    logout: "Выйти"
+    welcome: "Приветствуем, %{email}"
+
+  form:
+    start: "Старт теста"
+    you_sure: "Вы уверены?"
+    <<: *show
+    <<: *edit
+    <<: *destroy
+    <<: *back
 
   shared:
     errors:
@@ -21,8 +61,33 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
   tests:
-    index:
+    index: &index
       header: "Доступные тесты."
+      new: "Регистрация нового пользователя"
+      login: "Вход существующего пользователя"
+      admin: "Ресурсы администратора"
+      question: "К-во вопросов"
+      <<: *actions
+      <<: *title
+      <<: *level
+    
+  admin:
+    tests:
+      show:
+        test: "Тест"
+        test_questions: "Вопросы для этого теста:"
+        new_question: "Новый вопрос для этого теста"
+        <<: *actions
+        <<: *id
+        <<: *body
+        <<: *title
+        <<: *level
+      create:
+       success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты."
+        new_test: "Новый тест"
+        <<: *index
 
   test_passages:
     result: &result
@@ -30,13 +95,6 @@ ru:
       message: "Ваш результат: %{your_result} из %{max_result}."
       right_result: "Поздравляем, тест успешно завершен!"
       wrong_result: "Можно лучше, попробуйте снова."
-  
-  admin:
-    tests:
-      create:
-       success: "Тест успешно создан."
-      index:
-        header: "Доступные тесты."
 
   tests_mailer:
     completed_test:

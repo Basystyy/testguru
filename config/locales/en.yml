@@ -1,5 +1,32 @@
 en:
-  hello: "Hello world"
+
+  variables:
+    title: &title
+      title: "Title:"
+    
+    level: &level
+      level: "Level:"
+
+    actions: &actions
+      actions: "Actions"
+
+    show: &show
+      show: "Show"
+
+    edit: &edit
+      edit: "Edit"
+
+    destroy: &destroy
+      destroy: "Destroy"
+
+    id: &id
+      id: "Id"
+
+    body: &body
+      body: "Body"
+
+    back: &back
+      back: "Назад"  
 
   helpers:
     submit:
@@ -8,9 +35,22 @@ en:
         update: "Update test."
     label:
       test:
-        title: "Title"
-        level: "Level"
         category_id: "Category"
+        <<: *title
+        <<: *level
+
+  header:
+    project: "Project TestGuru, Rails skills training"
+    logout: "Logout"
+    welcome: "Welcome, %{email}"
+
+  form:
+    start: "Start test"
+    you_sure: "Are you sure?"
+    <<: *show
+    <<: *edit
+    <<: *destroy
+    <<: *back
 
   shared:
     errors:
@@ -19,8 +59,33 @@ en:
         other: "%{count} errors detected"
 
   tests:
-    index:
+    index: &index
       header: "Tricky tests."
+      new: "Register a new user"
+      login: "Login existing user"
+      admin: "Admin resources"
+      question: "Qnt questions"
+      <<: *actions
+      <<: *title
+      <<: *level
+  
+  admin:
+    tests:
+      show:
+        test: "Test"
+        test_questions: "Questions from this test:"
+        new_question: "New question for this test"
+        <<: *actions
+        <<: *id
+        <<: *body        
+        <<: *title
+        <<: *level
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky tests."
+        new_test: "New test"
+        <<: *index
 
   test_passages:
     result: &result
@@ -28,15 +93,6 @@ en:
       message: "Your result: %{your_result} from %{max_result}."
       right_result: "Congratulation, test was comleted!"
       wrong_result: "Test failed. Try again."
-
-  admin:
-    tests:
-      index:
-        header: "Tricky tests."
-      create:
-        success: "Test was successfully created."
-      index:
-        header: "Tricky tests."
 
   tests_mailer:
     completed_test:
