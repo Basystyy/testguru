@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  #git initial commit
 
   protect_from_forgery with: :exception
 
