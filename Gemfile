@@ -22,11 +22,6 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'rails-i18n', '>= 7.0.8'
 
-#UI
-
-gem 'jquery-rails'
-gem 'bootstrap',  '~> 5.3.0'
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
