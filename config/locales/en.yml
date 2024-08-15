@@ -45,6 +45,9 @@ en:
     welcome: "Welcome, %{email}"
 
   form:
+    new: "Register a new user"
+    login: "Login existing user"
+    admin: "Admin resources"
     next: "Next"
     start: "Start test"
     you_sure: "Are you sure?"
@@ -63,9 +66,6 @@ en:
   tests:
     index: &index
       header: "Tricky tests."
-      new: "Register a new user"
-      login: "Login existing user"
-      admin: "Admin resources"
       question: "Qnt questions"
       <<: *actions
       <<: *title

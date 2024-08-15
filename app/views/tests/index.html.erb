@@ -1,11 +1,5 @@
 <h1><%= t('.header') %></h1>
 
-<%= link_to t('.new'), new_user_registration_path %><br>
-
-<%= link_to t('.login'), new_user_session_path %><br>
-
-<%= link_to t('.admin'), admin_tests_path if current_user.is_a?(Admin) %>
-
 <table>
   <tr>
     <th><%= t('.title') %></th>
