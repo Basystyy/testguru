@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGutu', root_path, class: 'navbar-brand' %>
+  
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      <%= t('header.welcome', email: current_user.email) %><br>
+
+      <% if !request.path.start_with?('/admin') %>
+        <%= link_to t('form.admin'), admin_tests_path if current_user.is_a?(Admin) %><br>
+      <% end %>
+      
+      <%= link_to t('header.logout'), destroy_user_session_path, method: :delete, data: { confirm: t('form.you_sure') } %>
+    <% else %>      
+      <%= link_to t('form.new'), new_user_registration_path %> | <br>
+      <%= link_to t('form.login'), new_user_session_path %> | <br>
+    <% end %>
+  </span>
+</nav>
