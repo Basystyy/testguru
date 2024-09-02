@@ -11,12 +11,12 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
-    flash[:notice] = "Welcome, #{current_user.first_name} #{current_user.last_name}"
+    flash[:notice] = t('header.welcome', email: current_user.email)
     super(current_user)
   end
 
   def after_sign_up_path_for(current_user)
-    flash[:notice] = "Welcome, #{current_user.first_name} #{current_user.last_name}"
+    flash[:notice] = t('header.welcome', email: current_user.email)
     super(current_user)
   end
 
