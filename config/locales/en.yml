@@ -98,6 +98,9 @@ en:
       message: "Your result: %{your_result} from %{max_result}."
       right_result: "Congratulation, test was comleted!"
       wrong_result: "Test failed. Try again."
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occured while saving gist."
 
   tests_mailer:
     completed_test:
