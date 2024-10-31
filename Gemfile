@@ -35,7 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise', '~> 4.0'
 
-gem 'octokit', '~> 1.0.2'
+gem 'octokit', '~> 9.2'
 gem 'dotenv-rails', '~> 3.1'
 
 group :development, :test do
