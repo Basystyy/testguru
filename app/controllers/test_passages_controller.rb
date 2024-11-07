@@ -21,13 +21,11 @@ class TestPassagesController < AuthenticatedController
     end
   end
 
-  def create_gist
-    GistQuestionService.new(@test_passage.current_question).call
-  end
-
   def gist
-    flash_options = if create_gist[:id].present?
-                      { notice: "#{t('.success')} #{create_gist[:html_url]}" }
+    @result = GistQuestionService.new(@test_passage.current_question).call
+    new_gist
+    flash_options = if @result[:id].present?
+                      { notice: "#{t('.success')} #{view_context.link_to("#{@result.html_url.to_s}", @result.html_url, target: '_blank')}" }
                     else
                       { alert: t('.failure')}
                     end
@@ -38,6 +36,14 @@ class TestPassagesController < AuthenticatedController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def new_gist
+    Gist.create(
+      question: @test_passage.current_question,
+      user: @test_passage.user,
+      url: @result.html_url
+    )
   end
 
 end
