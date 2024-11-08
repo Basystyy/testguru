@@ -31,7 +31,7 @@ class TestPassagesController < AuthenticatedController
                     end
     redirect_to @test_passage, flash_options                    
   end
-
+  
   private
 
   def set_test_passage

@@ -89,7 +89,16 @@ ru:
       index:
         header: "Доступные тесты."
         new_test: "Новый тест"
+        gists: "Созданные гисты"
         <<: *index
+
+    gists:
+      header: "Созданные гисты"
+      question: "Вопрос"
+      user: "Пользователь"
+      url: "Ссылка"
+      actions: "Действие"
+
 
   test_passages:
     show:

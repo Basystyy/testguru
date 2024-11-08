@@ -87,7 +87,15 @@ en:
       index:
         header: "Tricky tests."
         new_test: "New test"
+        gists: "Created by gist"
         <<: *index
+
+    gists:
+      header: "Created by gist"
+      question: "Question"
+      user: "User"
+      url: "Link"
+      actions: "Actions"
 
   test_passages:
     show:
