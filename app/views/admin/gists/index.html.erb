@@ -1,0 +1,14 @@
+<div class="row justify-content-center mt-3">      
+  <h1><%= t('admin.gists.header') %></h1>
+
+  <table class="table table-auto">
+    <tr>
+      <th><%= t('admin.gists.question') %></th>
+      <th><%= t('admin.gists.user') %></th>
+      <th><%= t('admin.gists.url') %></th>
+      <th colspan="2"><%= t('admin.gists.actions') %></th>
+    </tr>
+
+    <%= render @gists %>
+  </table>
+</div>
