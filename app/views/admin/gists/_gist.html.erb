@@ -1,8 +1,7 @@
 <tr>
   <td><%= link_to(gist.question.body.truncate(25), admin_question_path(gist.question), target: '_blank') %></td>
   <td><%= gist.user.email %></td>
-  <td><%= link_to(gist.url, gist.url, target: '_blank') %></td>
-  <td><%= link_to t('form.show'), admin_gist_path(gist)%></td>
+  <td><%= link_to(t('admin.gists.go'), gist.url, target: '_blank') %></td>
   <td>
     <%= link_to t('form.destroy'), admin_gist_path(gist), method: :delete, data: { confirm: t('form.you_sure') } %>
   </td>

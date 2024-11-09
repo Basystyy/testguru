@@ -23,13 +23,13 @@ class TestPassagesController < AuthenticatedController
 
   def gist
     @result = GistQuestionService.new(@test_passage.current_question).call
-    new_gist
-    flash_options = if @result[:id].present?
-                      { notice: "#{t('.success')} #{view_context.link_to("#{@result.html_url.to_s}", @result.html_url, target: '_blank')}" }
-                    else
-                      { alert: t('.failure')}
-                    end
-    redirect_to @test_passage, flash_options                    
+    if @result[:id].present?
+      flash_options = { notice: "#{t('.success')} #{view_context.link_to("#{@result.html_url.to_s}", @result.html_url, target: '_blank')}" }
+      new_gist
+    else
+      flash_options = { alert: t('.failure')}
+    end
+    redirect_to @test_passage, flash_options
   end
   
   private

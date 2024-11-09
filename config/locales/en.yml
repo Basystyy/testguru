@@ -96,6 +96,7 @@ en:
       user: "User"
       url: "Link"
       actions: "Actions"
+      go: "Go to"
 
   test_passages:
     show:

@@ -98,6 +98,7 @@ ru:
       user: "Пользователь"
       url: "Ссылка"
       actions: "Действие"
+      go: "Перейти"
 
 
   test_passages:
