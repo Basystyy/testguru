@@ -32,6 +32,7 @@ gem 'rails-i18n', '>= 7.0.8'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'octicons_helper', '~> 19.12'
 
 gem 'devise', '~> 4.0'
 
