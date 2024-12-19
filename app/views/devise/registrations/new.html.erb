@@ -18,17 +18,19 @@
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
+  <div class="field password">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "password-input" %>
   </div>
 
-  <div class="field">
+  <div class="field confirmation">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "confirmation-input" %>
+    <%= octicon 'x', class: 'text-danger hide' %>
+    <%= octicon 'check', class: 'text-success hide' %>
   </div>
 
   <div class="actions">
