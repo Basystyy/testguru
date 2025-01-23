@@ -89,6 +89,8 @@ en:
         new_test: "New test"
         gists: "Created by gist"
         <<: *index
+      form_inline:
+        submit: "OK"
 
     gists:
       header: "Created by gist"

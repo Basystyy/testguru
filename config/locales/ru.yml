@@ -91,6 +91,8 @@ ru:
         new_test: "Новый тест"
         gists: "Созданные гисты"
         <<: *index
+      form_inline:
+        submit: "OK"
 
     gists:
       header: "Созданные гисты"
