@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 #LOCALIZATION
 
 gem 'rails-i18n', '>= 7.0.8'
+gem 'i18n-js', '>= 4.2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

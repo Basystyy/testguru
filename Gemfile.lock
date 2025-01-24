@@ -99,10 +99,14 @@ GEM
     faraday-net_http (3.3.0)
       net-http
     ffi (1.16.3)
+    glob (0.4.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    i18n-js (4.2.3)
+      glob (>= 0.4.0)
+      i18n
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -274,6 +278,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise (~> 4.0)
   dotenv-rails (~> 3.1)
+  i18n-js (>= 4.2)
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
