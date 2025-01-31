@@ -31,7 +31,7 @@ function formInlineHandler(testId) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
     formInline.classList.add('d-flex')
-    link.textContent = 'Cancel'
+    link.textContent = i18n.t('form.cancel')
   } else {
     testTitle.classList.remove('hide')
     formInline.classList.remove('d-flex')

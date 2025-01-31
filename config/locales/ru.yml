@@ -52,6 +52,7 @@ ru:
     start: "Старт теста"
     you_sure: "Вы уверены?"
     test_list: "Назад к списку тестов"
+    cancel: "Отмена"
     <<: *show
     <<: *edit
     <<: *destroy

@@ -318,6 +318,7 @@
     "form": {
       "admin": "Admin resources",
       "back": "Назад",
+      "cancel": "Cancel",
       "destroy": "Destroy",
       "edit": "Edit",
       "login": "Login existing user",
@@ -856,6 +857,7 @@
     "form": {
       "admin": "Ресурсы администратора",
       "back": "Назад",
+      "cancel": "Отмена",
       "destroy": "Удалить",
       "edit": "Редакт.",
       "login": "Вход существующего пользователя",
