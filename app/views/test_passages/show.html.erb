@@ -5,14 +5,10 @@
 </b>
 
 <div class="progress mb-3">
-  <div class="progress-bar" 
-       role="progressbar" 
-       style="width: <%= (current_number.to_f / questions_count * 100).round(2) %>%;" 
-       aria-valuenow="<%= (current_number.to_f / questions_count * 100).round(2) %>" 
-       aria-valuemin="0" 
-       aria-valuemax="100"
-       data-progress="<%= (current_number.to_f / questions_count * 100).round(2) %>">
-    <span class="progress-text"><%= (current_number.to_f / questions_count * 100).round(2) %>%</span>
+  <div class="progress-bar"
+    style="width: 0%"
+    data-current = "<%= current_number %>"
+    data-count = "<%= questions_count %>">
   </div>
 </div>
 
