@@ -24,7 +24,7 @@ class Admin::QuestionsController < AuthenticatedController
     @question.test = @test
 
     if @question.save
-      redirect_to @question.test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end

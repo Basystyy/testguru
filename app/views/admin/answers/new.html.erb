@@ -1,6 +1,6 @@
 <h1><%= answer_header(@question) %></h1>
 
-<%= form_with model: [@question, @answer], local: true do |form| %>
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <%= render partial: 'form', locals: {form: form}%>
 <% end %>
 

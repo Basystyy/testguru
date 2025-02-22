@@ -2,7 +2,7 @@ class Admin::AnswersController < AuthenticatedController
 
   before_action :set_answer, only: %i[show edit update destroy]
   before_action :question_find, only: %i[create new]
-  before_action :set_question, only: %i[destroy]
+  before_action :set_question, only: %i[destroy update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
 
@@ -11,7 +11,7 @@ class Admin::AnswersController < AuthenticatedController
   end
 
   def new
-    @answer = @question.answers.new
+    @answer = Answer.new
   end
 
   def edit
@@ -23,7 +23,7 @@ class Admin::AnswersController < AuthenticatedController
     @answer.question = @question
 
     if @answer.save
-      redirect_to @answer.question
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::AnswersController < AuthenticatedController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer.question
+      redirect_to admin_question_path(@question)
     else
       render :edit
     end
