@@ -98,6 +98,8 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
+    faraday-retry (2.2.1)
+      faraday (~> 2.0)
     ffi (1.16.3)
     glob (0.4.1)
     globalid (1.2.1)
@@ -278,6 +280,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise (~> 4.0)
   dotenv-rails (~> 3.1)
+  faraday-retry (~> 2.2)
   i18n-js (>= 4.2)
   jbuilder (~> 2.7)
   letter_opener
