@@ -5,6 +5,10 @@
 
 import '../stylesheets/application'
 import "../stylesheets/nav.scss"
+import "flash"
+import "test_passages"
+import "typography/icons"
+import "global"
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
