@@ -3,24 +3,22 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import '../stylesheets/application'
-import "../stylesheets/nav.scss"
-import "flash"
-import "test_passages"
-import "typography/icons"
-import "global"
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import 'bootstrap'
-import './localization'
-import './add_popover'
+import '../stylesheets/application.scss';
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
-import '../utilities/sorting'
-import '../utilities/confirmation'
-import '../utilities/form_inline'
-import '../utilities/progress_bar'
+import Rails from '@rails/ujs';
+import Turbolinks from 'turbolinks';
+import * as ActiveStorage from '@rails/activestorage';
+import 'channels';
+
+import 'bootstrap';
+import './localization';
+import './add_popover';
+
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();
+
+import '../utilities/sorting';
+import '../utilities/confirmation';
+import '../utilities/form_inline';
+import '../utilities/progress_bar';
